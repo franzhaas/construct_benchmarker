@@ -14,7 +14,5 @@ dfMerged = df.rename({"mean":"mean_merged"})
 
 df = dfMerged.join(on="name", other=dfMaster)
 df = df.with_columns((pl.col("mean_merged")-pl.col("mean_master")).alias("delta"))
-df = df.with_columns((100*((pl.col("mean_merged")-pl.col("mean_master"))/pl.col("mean_master"))).alias("%"))
+df = df.with_columns((100*(pl.col("delta")/pl.col("mean_master"))).alias("%"))
 df.write_excel("speed_comparison.xlsx")
-
-
