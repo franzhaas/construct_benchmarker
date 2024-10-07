@@ -31,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
-          path: speed_comparison.xlsx
+          path: construct/speed_comparison.xlsx
