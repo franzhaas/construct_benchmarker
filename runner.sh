@@ -15,7 +15,6 @@ git rebase remotes/origin/compileChecksum
 git rebase remotes/origin/CompileNullStripped
 uv run py.test tests --benchmark-only --benchmark-save=merged
 uv run py.test-benchmark  compare --csv=merged.csv
-cd ..
-uv run python analyser.py
+uv run python ../analyser.py
 
 
