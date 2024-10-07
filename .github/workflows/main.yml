@@ -24,4 +24,11 @@ jobs:
            uv sync
       - name: Perform analysis
         run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           sh runner.sh
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: speed_comparison.xlsx
