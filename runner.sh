@@ -4,6 +4,7 @@ uv add construct
 cd construct
 uv run py.test tests --benchmark-only --benchmark-save=master
 uv run py.test-benchmark  compare --csv=master.csv
+git rebase remotes/origin/compileEnum
 git rebase remotes/origin/compileNumpy
 git rebase remotes/origin/compilePickle
 git rebase remotes/origin/compileVarInt
@@ -17,5 +18,4 @@ git rebase remotes/origin/compilePointerMoreInlining
 uv run py.test tests --benchmark-only --benchmark-save=merged
 uv run py.test-benchmark  compare --csv=merged.csv
 uv run python ../analyser.py
-
 
